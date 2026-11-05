@@ -59,7 +59,7 @@ string getRandomWord()
    return gameData.at(randomIndex);
 }
 
-void writeTable()
+void writeHangingTree()
 {
    for(int i = 0; i < 7; i++)
    {
@@ -208,6 +208,7 @@ bool restart()
    return false;
 }
 
+
 void start()
 {
    readGameData();
@@ -225,7 +226,7 @@ void update()
 
    while(true)
    {
-      writeTable();
+      writeHangingTree();
       writeGeneratedWord('*', generatedWordSize);
 
       char playerInput;
@@ -264,6 +265,7 @@ void update()
    
          if(chances == 0)
          {
+            writeHangingTree();
             cout << "\nYou lost!" << "\n";
             cout << "The secret word was: " << generatedWord << "\n";
             
